@@ -1,5 +1,4 @@
 flask
 elasticsearch
 pandas
-python-dotenv
 gunicorns

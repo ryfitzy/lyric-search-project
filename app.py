@@ -1,15 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for
-from elasticsearch import Elasticsearch
-from dotenv import load_dotenv
 import os
+from flask import Flask, render_template, request
+from elasticsearch import Elasticsearch
 
 app = Flask(__name__)
 
-load_dotenv()
-
 es = Elasticsearch(
-  os.getenv("URL"),
-  api_key=os.getenv("SECRET_KEY")
+  os.environ.get("URL"),
+  api_key=os.environ.get("SECRET_KEY")
 )
 
 @app.route("/", methods=["GET", "POST"])
