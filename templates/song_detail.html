@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ song.title }} - Full Lyrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ song.title }}</h1>
+        <p><strong>Artist:</strong> {{ song.artist }}</p>
+        <p><strong>Year:</strong> {{ song.year }}</p>
+        <p><strong>Rank:</strong> {{ song.rank }}</p>
+        <hr>
+        <pre>{{ song.lyrics }}</pre>
+        <a href="/">← Back to Search</a>
+    </div>
+</body>
+</html>

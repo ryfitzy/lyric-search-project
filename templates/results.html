@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Results for "{{ query }}"</h1>
+        <a href="/">← Back to Search</a>
+        {% for song in results %}
+            <div class="result">
+                <strong>
+                    <u><a href="{{ url_for('song_detail', id=song.id) }}">{{ song.title }}</a></u>
+                </strong>
+                <p>
+                    Rank: {{ song.rank }} |
+                    Year: {{ song.year }} |
+                    Artist: {{ song.artist }}
+                </p>
+                <pre>{{ song.snippet|safe }}</pre>
+            </div>
+        {% else %}
+            <p>No results found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

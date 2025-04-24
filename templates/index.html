@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lyrics Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lyrics Search</h1>
+        <form method="POST">
+            <input type="text" name="query" placeholder="Search by lyrics, artist, or title" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
